@@ -68,16 +68,16 @@ def VToMp3Post(Audtitle):
         Audtitle2 = Audtitle2[:-4]
         pass
     print('We have recieved the variables '+Audtitle+' and '+Audtitle2)
-    mu = Music(audioPath+'\\'+Audtitle)
- #   aud = mu.audio()
-    mu.save(Audtitle2+".mp3")
+    mu = Movie(audioPath+'\\'+Audtitle)
+    aud = mu.audio()
+    aud.save(Audtitle2+".mp3")
     time.sleep(5)
     cmd1 = 'ren extract.mp3 "'+Audtitle2+'.mp3"'
     cwd = os.getcwd()
     if cwd != audioPath:
         os.chdir(audioPath)
         pass
-    os.system('dir /w')
+    os.system('dir')
     os.system(cmd1)
     os.chdir(path)
     print("Finished all processes")
